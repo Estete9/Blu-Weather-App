@@ -1,6 +1,8 @@
 package com.epicusprogramming.bluweatherapp.models
 
+
 data class Hourly(
+
     val clouds: Double,
     val dew_point: Double,
     val dt: Long,
