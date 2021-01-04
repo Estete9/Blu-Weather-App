@@ -34,7 +34,7 @@ class HourlyAdapter : RecyclerView.Adapter<HourlyAdapter.HourlyViewHolder>() {
                 SimpleDateFormat("h a").format(hourlyWeatherList[position].dt * 1000L)
 
             Glide.with(this)
-                .load("${BASE_ICON_URL}${hourlyWeatherList[position].weather[0].icon}${ENDING_ICON_URL}")
+                .load("$BASE_ICON_URL${hourlyWeatherList[position].weather[0].icon}$ENDING_ICON_URL")
                 .into(ivItemIcon)
         }
     }

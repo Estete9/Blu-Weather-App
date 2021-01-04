@@ -44,7 +44,7 @@ class WeatherActivity : AppCompatActivity() {
                         tvTemp.text = "${weatherResponse.current.temp.toInt()}°C"
 
                         Glide.with(this)
-                            .load("${BASE_ICON_URL}${weatherResponse.current.weather[0].icon}$ENDING_ICON_URL")
+                            .load("$BASE_ICON_URL${weatherResponse.current.weather[0].icon}$ENDING_ICON_URL")
                             .into(ivIcon)
                     }
 
