@@ -53,4 +53,3 @@ class Converters {
         return FeelsLike(day)
     }
 }
-//

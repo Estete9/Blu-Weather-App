@@ -7,7 +7,7 @@ import com.epicusprogramming.bluweatherapp.models.Hourly
 @Dao
 interface WeatherDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun upsertHourly(hourly: Hourly): Long
+    suspend fun upsertHourly(hourlyList: List<Hourly>): List<Long>
 
     @Query("SELECT * FROM hourly")
     fun getAllHourly(): LiveData<List<Hourly>>

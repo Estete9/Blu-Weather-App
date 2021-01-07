@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.epicusprogramming.bluweatherapp.R
+import com.epicusprogramming.bluweatherapp.db.HourlyDatabase
 import com.epicusprogramming.bluweatherapp.repositories.WeatherRepository
 import com.epicusprogramming.bluweatherapp.util.Constants.Companion.BASE_ICON_URL
 import com.epicusprogramming.bluweatherapp.util.Constants.Companion.ENDING_ICON_URL
@@ -27,8 +28,8 @@ class WeatherActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_weather)
 
-        val weatherRepository = WeatherRepository()
-        val viewModelProviderFactory = WeatherViewModelProviderFactory(weatherRepository)
+        val hourlyWeatherRepository = WeatherRepository(HourlyDatabase(this))
+        val viewModelProviderFactory = WeatherViewModelProviderFactory(hourlyWeatherRepository)
         val gps = Geocoder(this).getFromLocation(-0.2, -78.51, 1)[0]
 
         setDateTimeCountry(gps, tvCity, tvDate, tvTime)

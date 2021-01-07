@@ -13,6 +13,7 @@ import com.epicusprogramming.bluweatherapp.ui.WeatherActivity
 import com.epicusprogramming.bluweatherapp.ui.WeatherViewModel
 import com.epicusprogramming.bluweatherapp.util.Resource
 import kotlinx.android.synthetic.main.fragment_hourly.*
+import java.util.*
 
 
 class HourlyFragment : Fragment(R.layout.fragment_hourly) {
@@ -37,6 +38,11 @@ class HourlyFragment : Fragment(R.layout.fragment_hourly) {
                 is Resource.Success -> {
                     response.data?.let { hourlyResponse ->
                         hourlyAdapter.setData(hourlyResponse.hourly)
+                        Log.d(TAG, "now is = ${Calendar.getInstance().timeInMillis / 1000L}")
+                        Log.d(TAG, "hourly[0] = ${hourlyResponse.hourly[0]}")
+                        Log.d(TAG, "hourly[1] = ${hourlyResponse.hourly[1]}")
+//                        if ((hourlyResponse.hourly[0].dt + 3600L) -  )
+//                        hourlyWeatherViewModel.saveHourlyList(hourlyResponse.hourly)
                     }
                 }
                 is Resource.Error -> {
@@ -49,6 +55,9 @@ class HourlyFragment : Fragment(R.layout.fragment_hourly) {
                     Log.d(TAG, "response loading")
                 }
             }
+
+        })
+        hourlyWeatherViewModel.getSavedHourly().observe(viewLifecycleOwner, {
 
         })
     }
