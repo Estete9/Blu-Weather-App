@@ -1,6 +1,14 @@
 package com.epicusprogramming.bluweatherapp.models
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(
+    tableName = "hourly"
+)
 data class Hourly(
+    @PrimaryKey(autoGenerate = true)
+    var id: Int? = null,
     val clouds: Double,
     val dew_point: Double,
     val dt: Long,

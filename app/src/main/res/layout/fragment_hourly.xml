@@ -12,7 +12,7 @@
         android:id="@+id/rvHourly"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#4E4E4E"
+        android:background="#3A3A3A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

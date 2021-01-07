@@ -1,12 +1,14 @@
 package com.epicusprogramming.bluweatherapp.repositories
 
 import com.epicusprogramming.bluweatherapp.api.RetrofitInstance
+import com.epicusprogramming.bluweatherapp.db.HourlyDatabase
 import com.epicusprogramming.bluweatherapp.models.WeatherResponse
 import retrofit2.Response
 
 
 class WeatherRepository(
-//    hourlyDb: HourlyDatabase
+//    val hourlyDb: HourlyDatabase
+//    val
 ) {
     suspend fun getWeather(
         lat: Double,
